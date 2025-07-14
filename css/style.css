@@ -1,0 +1,451 @@
+@charset "UTF-8";
+/*******************************
+変数の指定
+*******************************/
+/*******************************
+Webサイト全体の指定
+*******************************/
+html {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/*******************************
+共通パーツの指定
+*******************************/
+.wrapper {
+  max-width: 1080px;
+  padding: 80px 40px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 390px;
+    padding: 80px 20px;
+  }
+}
+
+.section_title {
+  color: #83776a;
+  margin-bottom: 64px;
+}
+@media screen and (max-width: 768px) {
+  .section_title {
+    margin-bottom: 40px;
+  }
+}
+
+.section_title_en {
+  font-family: "Noto Serif JP";
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.section_title_ja {
+  font-size: 16px;
+  padding-left: 45px;
+  position: relative;
+}
+
+.section_title_ja::before {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 1px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #83776a;
+}
+
+.readMoreBtn {
+  display: block;
+  width: 180px;
+  padding: 10px 0;
+  color: #83776a;
+  border: 1px solid #83776a;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+@media screen and (max-width: 768px) {
+  .readMoreBtn {
+    margin: 0 auto;
+  }
+}
+.readMoreBtn:hover {
+  background-color: #83776a;
+  color: #fff;
+}
+.readMoreBtn::after {
+  position: absolute;
+  content: "";
+  width: 70px;
+  height: 1px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: -35px;
+  background-color: #83776a;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 990;
+}
+.readMoreBtn:hover::after {
+  right: -45px;
+}
+
+.readMoreBtn--center {
+  margin: 0 auto;
+}
+
+/*******************************
+header
+*******************************/
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+}
+
+.header_inner {
+  max-width: 1080px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+@media screen and (max-width: 768px) {
+  .header_inner {
+    padding: 16px 20px;
+  }
+}
+
+.logo_img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+.header_nav_items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+.header_nav_item {
+  padding-right: 40px;
+}
+@media screen and (max-width: 768px) {
+  .header_nav_item {
+    gap: 24px;
+  }
+}
+.header_nav_item:last-child {
+  padding-right: 0px;
+}
+
+.header_nav_link {
+  font-weight: bold;
+  font-family: "Noto Serif JP";
+  color: #83776a;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.header_nav_link:hover {
+  opacity: 0.7;
+}
+
+/*******************************
+first view
+*******************************/
+.firstView {
+  padding: 300px 0;
+  margin-left: 280px;
+  background-image: url(/image/fv.png);
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .firstView {
+    margin-left: 0;
+  }
+}
+.firstView_title {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  position: absolute;
+  left: -140px;
+  bottom: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #83776a;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Noto Serif JP";
+  color: #83776a;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+@media screen and (max-width: 768px) {
+  .firstView_title {
+    width: 200px;
+    height: 200px;
+    top: 200px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 24px;
+  }
+}
+
+/*******************************
+concept
+*******************************/
+.concept_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 60px;
+}
+@media screen and (max-width: 768px) {
+  .concept_inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+  }
+}
+.concept_text {
+  margin-bottom: 40px;
+}
+
+/*******************************
+menu
+*******************************/
+.menu {
+  background-color: #f9f5ed;
+}
+.menu_items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  .menu_items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.menu_item {
+  position: relative;
+}
+.menu_item:nth-of-type(2) {
+  margin-top: 40px;
+}
+.menu_item:nth-of-type(3) {
+  margin-top: 80px;
+}
+@media screen and (max-width: 768px) {
+  .menu_item:nth-of-type(2),
+  .menu :nth-of-type(3) {
+    margin-top: 0px;
+  }
+}
+.menu_no {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #83776a;
+  font-family: "Noto Serif JP";
+  font-size: 32px;
+  font-weight: bold;
+  z-index: 90;
+}
+.menu_img {
+  margin-bottom: 16px;
+}
+.menu_text {
+  font-family: "Serif Sans JP";
+}
+.menu_price {
+  color: #83776a;
+  font-weight: bold;
+}
+
+/*******************************
+Background Image（固定背景）
+*******************************/
+.bgImage {
+  height: 500px;
+  background-image: url(/image/fixed_bg.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (max-width: 768px) {
+  .bgImage {
+    height: 350px;
+    background-attachment: scroll;
+  }
+}
+
+/*******************************
+shop
+*******************************/
+.shop_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 60px;
+}
+@media screen and (max-width: 768px) {
+  .shop_inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.shopInfo_box {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.shopInfo_name {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Noto Serif JP";
+  color: #83776a;
+}
+.shopInfo_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid #ccc;
+}
+.shopInfo_title {
+  width: 70px;
+  font-weight: normal;
+}
+.shopInfo_data {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.shopInfo_img {
+  max-width: 100%;
+  display: block;
+}
+
+/*******************************
+footer
+*******************************/
+.footer_inner {
+  width: 100%;
+  background-color: #f9f5ed;
+  padding: 40px 0;
+  text-align: center;
+}
+.footer_logoLink {
+  display: inline-block;
+  margin: 0 auto 16px;
+}
+.footer_nav_items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+@media screen and (max-width: 768px) {
+  .footer_nav_items {
+    gap: 16px;
+  }
+}
+
+.copyright {
+  font-size: 14px;
+  color: #83776a;
+}
+
+/*******************************
+reservation Button
+*******************************/
+.reservBtn {
+  display: block;
+  position: fixed;
+  bottom: 65px;
+  right: 0;
+  z-index: 90;
+}
+.reservBtn_img {
+  display: block;
+  max-width: 100%;
+}
